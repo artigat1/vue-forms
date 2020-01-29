@@ -87,8 +87,10 @@
                     <label for="priority">Priority</label>
                     <select
                             class="form-control"
-                            id="priority">
-                        <option></option>
+                            id="priority"
+                            v-model="selectedPriority">
+                        <option v-for="priority in priorities">{{ priority }}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -118,7 +120,7 @@
                             <li v-for="mail in sendMail">{{ mail }}</li>
                         </ul>
                         <p>Gender: {{ gender }}</p>
-                        <p>Priority:</p>
+                        <p>Priority: {{ selectedPriority }}</p>
                         <p>Switched:</p>
                     </div>
                 </div>
@@ -138,7 +140,9 @@
                 },
                 message: 'Enter some text',
                 sendMail: [],
-                gender: 'male'
+                gender: 'male',
+                priorities: ['High', 'Medium', 'Low'],
+                selectedPriority: 'Low'
             }
         }
     }
