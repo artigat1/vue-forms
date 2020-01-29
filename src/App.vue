@@ -11,7 +11,7 @@
                                 class="form-control"
                                 id="email"
                                 type="text"
-                                v-model="userData.email">
+                                v-model.trim="userData.email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -19,7 +19,7 @@
                                 class="form-control"
                                 id="password"
                                 type="password"
-                                v-model="userData.password">
+                                v-model.lazy="userData.password">
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
@@ -27,7 +27,7 @@
                                 class="form-control"
                                 id="age"
                                 type="number"
-                                v-model="userData.age">
+                                v-model.number="userData.age">
                     </div>
 
                 </div>
@@ -39,7 +39,8 @@
                     <textarea
                             class="form-control"
                             id="message"
-                            rows="5"></textarea>
+                            rows="5"
+                            v-model="message"/>
                 </div>
             </div>
             <div class="row">
@@ -107,7 +108,7 @@
                         <p>Mail: {{userData.email}}</p>
                         <p>Password: {{userData.password}}</p>
                         <p>Age: {{userData.age}}</p>
-                        <p>Message: </p>
+                        <p style="white-space: pre">Message: {{message}}</p>
                         <p><strong>Send Mail?</strong></p>
                         <ul>
                             <li></li>
@@ -130,7 +131,8 @@
                     email: '',
                     password: '',
                     age: 21
-                }
+                },
+                message: 'Enter some text'
             }
         }
     }
