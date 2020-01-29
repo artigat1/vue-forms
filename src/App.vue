@@ -16,10 +16,11 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input
+                                :value="userData.password"
+                                @input="userData.password = $event.target.value"
                                 class="form-control"
                                 id="password"
-                                type="password"
-                                v-model.lazy="userData.password">
+                                type="password">
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
