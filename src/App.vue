@@ -70,12 +70,14 @@
                         <input
                                 id="male"
                                 type="radio"
+                                v-model="gender"
                                 value="Male"> Male
                     </label>
                     <label for="female">
                         <input
                                 id="female"
                                 type="radio"
+                                v-model="gender"
                                 value="Female"> Female
                     </label>
                 </div>
@@ -115,7 +117,7 @@
                         <ul>
                             <li v-for="mail in sendMail">{{ mail }}</li>
                         </ul>
-                        <p>Gender:</p>
+                        <p>Gender: {{ gender }}</p>
                         <p>Priority:</p>
                         <p>Switched:</p>
                     </div>
@@ -135,7 +137,8 @@
                     age: 21
                 },
                 message: 'Enter some text',
-                sendMail: []
+                sendMail: [],
+                gender: 'male'
             }
         }
     }
